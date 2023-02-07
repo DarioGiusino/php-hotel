@@ -75,7 +75,11 @@ $hotels = [
           <tr>
             <td scope="row"><?= $hotel['name'] ?></td>
             <td><?= $hotel['description'] ?></td>
-            <td><?= $hotel['parking'] ?></td>
+            <?php if ($hotel['parking']) : ?>
+              <td>Sì</td>
+            <?php else : ?>
+              <td>No</td>
+            <?php endif; ?>
             <td><?= $hotel['vote'] ?>/10</td>
             <td><?= $hotel['distance_to_center'] ?> Kms</td>
           </tr>
