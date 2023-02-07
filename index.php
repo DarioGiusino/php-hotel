@@ -56,8 +56,29 @@ $hotels = [
   <!-- titolo pagina -->
   <h1 class="text-center my-4">Lista di Hotel</h1>
 
+  <!-- form seleziona parcheggio -->
+  <form class="d-flex align-items-center container gap-2" action="" method="GET">
+    <label for="parking">Parcheggio</label>
+    <select id="parking" class="form-select me-3" name="parking">
+      <option value="" selected>---</option>
+      <option value="yes">Sì</option>
+      <option value="no">No</option>
+    </select>
+
+    <label for="rating">Voto</label>
+    <select id="rating" class="form-select" name="rating">
+      <option value="" selected>---</option>
+      <option value="plus2">da 2 in sù</option>
+      <option value="plus3">da 3 in sù</option>
+      <option value="plus4">da 4 in sù</option>
+      <option value="plus5">solo 5/5</option>
+    </select>
+
+    <button class="btn btn-primary">Invia</button>
+  </form>
+
   <!-- tabella di hotel -->
-  <div class="container mt-3">
+  <div class="container mt-4">
     <table class="table table-dark table-striped">
       <!-- prima riga tabella, descrizione colonne -->
       <thead>
@@ -80,7 +101,7 @@ $hotels = [
             <?php else : ?>
               <td>No</td>
             <?php endif; ?>
-            <td><?= $hotel['vote'] ?>/10</td>
+            <td><?= $hotel['vote'] ?>/5</td>
             <td><?= $hotel['distance_to_center'] ?> Kms</td>
           </tr>
         <?php endforeach; ?>
