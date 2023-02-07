@@ -50,6 +50,19 @@
     <title>Hotels</title>
 </head>
 <body>
-    
+    <div class="container mt-3">
+        <h1 class="text-center">Lista hotel</h1>
+        <ul>
+            <?php foreach($hotels as $key => $hotel) : ?>
+            <li>
+                <h3>Nome: <?= $hotel['name'] ?></h3>
+                <p>Descrizione: <?= $hotel['description'] ?></p>
+                <p>Parcheggio: <?= $hotel['parking'] ?></p>
+                <p>Voto: <?= $hotel['vote'] ?></p>
+                <p>Distanza: <?= $hotel['distance_to_center'] ?></p><br>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
 </body>
 </html>
